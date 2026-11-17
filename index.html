@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Reborn in China — What Class Would You Get?</title>
+<meta name="description" id="metaDesc" content="One tap. A brand-new life in China. From dishwasher to billionaire — and only 1.5% land EMPEROR ENERGY. Think you can beat that? Spin it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cfldgaga.github.io/reborn-in-china/">
+<meta property="og:title" content="Reborn in China — What Class Would You Get?">
+<meta property="og:description" id="ogDesc" content="One tap. A brand-new life in China. From dishwasher to billionaire — and only 1.5% land EMPEROR ENERGY. Think you can beat that? Spin it.">
+<meta property="og:image" content="https://cfldgaga.github.io/reborn-in-china/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reborn in China — What Class Would You Get?">
+<meta name="twitter:description" id="twDesc" content="One tap. A brand-new life in China. From dishwasher to billionaire — and only 1.5% land EMPEROR ENERGY. Think you can beat that? Spin it.">
+<meta name="twitter:image" content="https://cfldgaga.github.io/reborn-in-china/share.jpg">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+body {
+font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+background: linear-gradient(160deg, #ff9a3d 0%, #ffb347 35%, #ffd23f 70%, #ff7b54 100%);
+min-height: 100vh;
+color: #4a2400;
+}
+.wrap { max-width: 480px; margin: 0 auto; padding: 24px 18px 40px;}
+header { text-align:center; padding: 10px 0 4px;}
+header.kicker { font-size: 13px; letter-spacing: 4px; color:#fff7e6; font-weight:600;}
+header h1 { font-size: 34px; color:#fff; text-shadow: 0 3px 0 rgba(180,60,0,.35); margin: 6px 0 4px;}
+header p.sub { font-size: 14px; color:#fff3d6;}
+.friend-banner {
+display:none; margin-top:16px; text-align:center;
+background: linear-gradient(180deg, #ff4d4d, #e63946); color:#fff;
+font-size:16px; font-weight:800; line-height:1.5;
+padding: 12px 16px; border-radius: 14px;
+box-shadow: 0 8px 20px rgba(160,30,0,.3);
+}
+.friend-banner.on { display:block; animation: pop.45s ease;}
+.wheel-zone { position:relative; width: 320px; height: 320px; margin: 26px auto 8px;}
+.pointer {
+position:absolute; top:-14px; left:50%; transform:translateX(-50%); z-index:5;
+width:0; height:0; border-left:16px solid transparent; border-right:16px solid transparent;
+border-top:28px solid #e63946; filter: drop-shadow(0 3px 3px rgba(0,0,0,.25));
+}
+.wheel {
+width:100%; height:100%; border-radius:50%;
+border:10px solid #fff3d6;
+box-shadow: 0 14px 34px rgba(160,50,0,.35), inset 0 0 0 4px rgba(255,255,255,.5);
+position:relative;
+transition: transform 3.6s cubic-bezier(.12,.72,.08,1);
+}
+.wheel .seg-label {
+position:absolute; left:50%; top:50%; width:120px; margin-left:-60px;
+text-align:center; font-size:11px; font-weight:700; color:#5b2a00;
+pointer-events:none;
+}
+.hub {
+position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+width:92px; height:92px; border-radius:50%; z-index:4;
+background: radial-gradient(circle at 35% 30%, #ffe9a8, #ff8c1a);
+border:5px solid #fff7e6; box-shadow:0 6px 16px rgba(160,50,0,.4);
+display:flex; align-items:center; justify-content:center;
+font-size:15px; font-weight:800; color:#7a2d00; text-align:center; line-height:1.25;
+}
+.spin-btn {
+display:block; margin: 20px auto 6px; border:none; cursor:pointer;
+background: linear-gradient(180deg, #ff4d4d, #e63946);
+color:#fff; font-size:22px; font-weight:800; letter-spacing:2px;
+padding: 16px 54px; border-radius: 999px;
+box-shadow: 0 8px 0 #b31b25, 0 16px 26px rgba(160,30,0,.35);
+transition: transform.08s, box-shadow.08s;
+}
+.spin-btn:active { transform: translateY(5px); box-shadow: 0 3px 0 #b31b25, 0 8px 16px rgba(160,30,0,.3);}
+.spin-btn:disabled { opacity:.65; cursor:default;}
+.hint { text-align:center; font-size:13px; color:#fff3d6; margin-bottom: 10px;}
+.total-line { text-align:center; font-size:14px; font-weight:700; color:#ffe9a8; margin: 2px 0 6px; min-height:20px;}
+.my-no { margin-top:12px; display:none; background:#e63946; color:#fff; font-weight:800; font-size:16px; padding:8px 16px; border-radius:999px;}
+.my-no.on { display:inline-block;}
+.x-btn { margin-top:10px; background:#000; color:#fff; border:none; font-size:15px; font-weight:700; padding:10px 22px; border-radius:999px; cursor:pointer;}
+
+.result { display:none; margin-top: 22px;}
+.result.show { display:block; animation: pop.45s ease;}
+@keyframes pop { from { transform:scale(.92); opacity:0;} to { transform:scale(1); opacity:1;}}
+.result-title {
+text-align:center; color:#fff; font-size:20px; font-weight:900; letter-spacing:3px;
+text-shadow: 0 2px 0 rgba(180,60,0,.35); margin-bottom: 12px;
+}
+.poster {
+background: linear-gradient(165deg, #fff8ea, #ffe3b3);
+border: 3px dashed #ff8c1a; border-radius: 20px;
+padding: 26px 20px 20px; text-align:center;
+box-shadow: 0 12px 28px rgba(160,50,0,.25);
+}
+.poster.poster-tag { font-size:12px; letter-spacing:3px; color:#c96a00; font-weight:700;}
+.poster.tier-no { font-size:13px; color:#a05a00; margin-top:10px;}
+.poster.tier-name { font-size:42px; font-weight:900; color:#e65100; line-height:1.15; margin:2px 0 6px;}
+.poster.rare { display:none; background:#e63946; color:#fff; font-size:12px; font-weight:700;
+padding:3px 12px; border-radius:999px; margin-bottom:8px;}
+.poster.rare.on { display:inline-block;}
+.poster.identity { font-size:16px; font-weight:700; color:#7a3d00;}
+.poster.comment { font-size:15px; line-height:1.7; color:#5b3400; margin:12px 6px 10px;}
+.poster.beat { display:inline-block; background:#fff; border:1.5px solid #ffb35c; color:#d35400;
+font-weight:800; font-size:14px; padding:6px 16px; border-radius:999px;}
+.poster.poster-note { margin-top:14px; font-size:11px; color:#b98a4a;}
+.dl-btn { margin-top:14px; border:none; cursor:pointer; background:linear-gradient(180deg,#ff4d4d,#e63946);
+color:#fff; font-size:16px; font-weight:800; padding:11px 30px; border-radius:999px;
+box-shadow:0 5px 0 #b31b25, 0 10px 18px rgba(160,30,0,.3);}
+.dl-btn:active { transform:translateY(3px); box-shadow:0 2px 0 #b31b25;}
+.copy-btn { margin-top:10px; cursor:pointer; background:#fff; border:2px solid #ff8c1a;
+color:#d35400; font-size:15px; font-weight:800; padding:10px 26px; border-radius:999px;}
+.copy-btn:active { transform:translateY(2px);}
+
+.entries { margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.entries button,.gift-btn {
+border:none; cursor:pointer; border-radius:14px; font-weight:700;
+background:#fff7e6; color:#8a4a00; box-shadow:0 4px 12px rgba(160,50,0,.18);
+}
+.entries button { padding:14px 4px; font-size:14px;}
+.entries button.emo { display:block; font-size:22px; margin-bottom:5px;}
+.gift-row { text-align:center; margin-top:12px;}
+.gift-btn { padding:8px 20px; font-size:13px; background:rgba(255,247,230,.75);}
+.again-row { text-align:center; margin-top:18px;}
+.again-btn { border:2px solid #fff; background:transparent; color:#fff; font-weight:800;
+font-size:15px; padding:10px 34px; border-radius:999px; cursor:pointer;}
+footer { text-align:center; margin-top:26px; font-size:12px; color:#fff3d6; line-height:1.8;}
+.toast {
+position:fixed; left:50%; bottom:36px; transform:translateX(-50%) translateY(20px);
+background:rgba(60,25,0,.92); color:#ffe9c4; font-size:13px; padding:10px 20px;
+border-radius:999px; opacity:0; pointer-events:none; transition:.3s; z-index:20; max-width:86vw; white-space:normal; text-align:center; line-height:1.5;
+}
+.toast.on { opacity:1; transform:translateX(-50%) translateY(0);}
+
+.poster-mask {
+position:fixed; inset:0; z-index:40; display:none;
+background:rgba(60,25,0,.78);
+align-items:center; justify-content:center; padding:18px;
+}
+.poster-mask.on { display:flex;}
+.poster-box { max-width:440px; width:100%; text-align:center;}
+.poster-box img {
+max-width:100%; max-height:58vh; border-radius:14px;
+box-shadow:0 16px 40px rgba(0,0,0,.45); background:#fff8ea;
+}
+.poster-tip { color:#ffe9c4; font-size:14px; line-height:1.7; margin:14px 6px 4px; font-weight:700;}
+.poster-actions { margin-top:8px;}
+.poster-actions.dl-btn { margin-top:8px;}
+.close-btn { margin-top:8px; margin-left:10px; cursor:pointer; background:transparent;
+border:2px solid #ffe9c4; color:#ffe9c4; font-size:15px; font-weight:800;
+padding:10px 26px; border-radius:999px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">A ONE-TAP SPIN GAME</div>
+<h1>Reborn in China</h1>
+<p class="sub">One tap, a brand-new life — what class do you land in?</p>
+</header>
+
+<div class="friend-banner" id="friendBanner"></div>
+
+<div class="wheel-zone">
+<div class="pointer"></div>
+<div class="wheel" id="wheel"></div>
+<div class="hub">CHINA<br>REBORN</div>
+</div>
+
+<button class="spin-btn" id="spinBtn">SPIN IT</button>
+<p class="hint">No quiz. No sign-up. One tap and your fate is sealed.</p>
+<p class="total-line" id="totalLine"></p>
+
+<section class="result" id="result">
+<div class="result-title" id="resultTitle">MY RESULT</div>
+<div class="poster">
+<div class="poster-tag">R E B O R N · I N · C H I N A</div>
+<div class="tier-no" id="tierNo"></div>
+<div class="tier-name" id="tierName"></div>
+<span class="rare" id="rareTag">ULTRA RARE</span>
+<div class="identity" id="identity"></div>
+<p class="comment" id="comment"></p>
+<span class="beat" id="beat"></span>
+<br>
+<span class="my-no" id="myNo"></span>
+<div class="poster-note">Reborn in China · Save your result card and flex it</div>
+<button type="button" class="dl-btn" id="dlBtn">💾 Save my result card</button>
+<br>
+<button type="button" class="copy-btn" id="copyBtn">🔗 Copy my result link</button>
+<br>
+<button type="button" class="x-btn" id="xBtn">𝕏 Post it on X</button>
+</div>
+
+<div class="entries">
+<button type="button" data-link="https://x.com/CfldwyhusaGaga"><span class="emo">𝕏</span>Follow Dr. Wang on X</button>
+<button type="button" data-link="https://cfldgaga.github.io/reborn-in-usa/"><span class="emo">🇺🇸</span>Original: Reborn in the USA</button>
+<button type="button" data-msg="Dr. Wang's day job: helping Chinese companies set up, sort their taxes and land softly in the US. This game is the mirror image."><span class="emo">🌏</span>What Dr. Wang actually does</button>
+<button type="button" data-msg="Emperor Energy is only 1.5%. The other 98.5% is where the fun is."><span class="emo">👑</span>Odds of Emperor Energy</button>
+</div>
+
+<div class="again-row">
+<button type="button" class="again-btn" id="againBtn">Spin again</button>
+</div>
+</section>
+
+<footer>
+For fun only — results are 100% random<br>
+Reborn in China · by Dr. Wang — your real life is still your best save file
+</footer>
+</div>
+<div class="toast" id="toast">Coming soon</div>
+
+<div class="poster-mask" id="posterMask">
+<div class="poster-box">
+<img id="posterImg" alt="My Reborn in China result card">
+<p class="poster-tip">Long-press (or right-click) to save this card, then post it and flex your tier</p>
+<div class="poster-actions">
+<button type="button" class="dl-btn" id="dlDirect">Download to device</button>
+<button type="button" class="close-btn" id="posterClose">Close</button>
+</div>
+</div>
+</div>
+
+<script>
+// 十档：王者稀有 1.5%，其余九档等权（各 98.5/9 ≈ 10.944%）
+var TIERS = [
+{ name:"Street Drifter", label:"Drifter", identity:"Your new life: professional city wanderer", beat:3, comment:"You own nothing but the skyline. Every park bench is your corner office, and rent is just a rumor you have heard about."},
+{ name:"Construction Worker", label:"Builder", identity:"Your new life: high-rise builder", beat:18, comment:"You build towers you will never live in, and your biceps have their own fan club on site. Out here, muscle is money."},
+{ name:"Dishwasher", label:"Dishwasher", identity:"Your new life: kitchen rhythm master", beat:32, comment:"Ten thousand plates a day, zero broken. The whole kitchen runs on your beat — nobody eats until you say so."},
+{ name:"Delivery Rider", label:"Rider", identity:"Your new life: street legend in a blue jacket", beat:48, comment:"You know every shortcut, every elevator hack, every hungry regular by name. Rain or shine, you beat the app's ETA."},
+{ name:"Office Worker", label:"Office", identity:"Your new life: cubicle resident, 9-to-9 warrior", beat:62, comment:"Meetings by day, bubble tea by night. Your calendar is packed, your chair is ergonomic, and Friday has never looked this good."},
+{ name:"Software Engineer", label:"Engineer", identity:"Your new life: Shenzhen code wizard", beat:76, comment:"You ship features at 2 a.m. and debug production with one eye open. Hairline vs. stock options — one of them is definitely going up."},
+{ name:"Shop Owner", label:"Owner", identity:"Your new life: boss of your own street corner", beat:86, comment:"Your shop, your rules, your playlist. The regulars call you 'Boss' — because you literally are one."},
+{ name:"Tech Executive", label:"Executive", identity:"Your new life: boardroom power player", beat:94, comment:"Booked out three weeks straight, and every sentence starts with 'Let's align on this.' People take notes when you talk."},
+{ name:"Billionaire Founder", label:"Billionaire", identity:"Your new life: e-commerce empire builder", beat:98, comment:"You started with one tiny online store. Now your face is on magazine covers and in business-school case studies."},
+{ name:"EMPEROR ENERGY", label:"EMPEROR", identity:"Your new life: top of the food chain", beat:99, comment:"The rarest pull in the game. You did not just win this life — you own the board it was played on. Even your alarm clock needs an appointment."}
+];
+var KING_P = 0.015;
+var OTHER_P = (1 - KING_P) / 9;
+
+function pickTier() {
+var r = Math.random();
+if (r < KING_P) return 9;
+var idx = Math.floor((r - KING_P) / OTHER_P);
+if (idx < 0) idx = 0;
+if (idx > 8) idx = 8;
+return idx;
+}
+
+// 转盘：10 等分扇区，自顶部顺时针依次为十档
+var COLORS = ["#ffd23f","#ff9a3d","#ffe9a8","#ffb347","#fff3d6","#ffc46b","#ffd23f","#ff9a3d","#ffe9a8","#e63946"];
+var wheel = document.getElementById("wheel");
+var grad = "conic-gradient(from -18deg, ";
+for (var i = 0; i < 10; i++) {
+grad += COLORS[i] + " " + (i * 36) + "deg " + ((i + 1) * 36) + "deg" + (i < 9? ", ": "");
+}
+grad += ")";
+wheel.style.background = grad;
+TIERS.forEach(function(t, i) {
+var s = document.createElement("span");
+s.className = "seg-label";
+s.textContent = t.label || t.name;
+s.style.transform = "rotate(" + (i * 36) + "deg) translateY(-128px)";
+wheel.appendChild(s);
+});
+
+var spinning = false, currentRot = 0, lastIdx = -1, friendMode = false;
+var spinBtn = document.getElementById("spinBtn");
+var result = document.getElementById("result");
+var resultTitle = document.getElementById("resultTitle");
+var friendBanner = document.getElementById("friendBanner");
+
+// 砸出自己的结果后：把战绩同步到页面标题、分享描述与地址参数
+function setShareResult(idx) {
+var t = TIERS[idx];
+var s = "I landed \u3010" + t.name + "\u3011 in Reborn in China! I beat ~" + t.beat + "% of players. Think you can outrank me?";
+document.title = s;
+["metaDesc", "ogDesc", "twDesc"].forEach(function(id) {
+var el = document.getElementById(id);
+if (el) el.setAttribute("content", s);
+});
+try { history.replaceState(null, "", location.pathname + "?r=" + idx);} catch (e) {}
+}
+
+function spin() {
+if (spinning) return;
+if (friendMode) {
+// 朋友点「我也砸一下」：恢复本人模式
+friendMode = false;
+friendBanner.classList.remove("on");
+resultTitle.textContent = "MY RESULT";
+}
+spinning = true;
+spinBtn.disabled = true;
+result.classList.remove("show");
+var idx = pickTier();
+// 扇区中心角（自顶部顺时针）为 idx*36 度；转盘顺时针转 (360-center) 后该扇区对准顶部指针
+var center = idx * 36;
+var base = Math.ceil(currentRot / 360) * 360;
+currentRot = base + 360 * 6 + ((360 - center) % 360);
+wheel.style.transform = "rotate(" + currentRot + "deg)";
+setTimeout(function() {
+showResult(idx, false);
+spinning = false;
+spinBtn.disabled = false;
+spinBtn.textContent = "SPIN AGAIN";
+}, 3800);
+}
+
+// 全网计数：每砸一次 +1，显示「你是第 N 个重生在美国的人」（免费计数服务，失败则静默不显示）
+var myNo = 0;
+function countCall(path, cb) {
+var url = "https://abacus.jasoncameron.dev/" + path + "/wangboshi-reborn-china/spins";
+var settled = false;
+var timer = setTimeout(function() { settled = true; }, 3500);
+fetch(url).then(function(r) { return r.json(); }).then(function(d) {
+clearTimeout(timer);
+if (!settled && d && typeof d.value === "number") { settled = true; cb(d.value); }
+}).catch(function() { clearTimeout(timer); });
+}
+function fmtNo(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+countCall("get", function(v) {
+document.getElementById("totalLine").textContent = "🔥 " + fmtNo(v) + " people have already been reborn in China";
+});
+
+function showResult(idx, isFriend) {
+lastIdx = idx;
+if (isFriend) {
+myNo = 0;
+var mn0 = document.getElementById("myNo");
+mn0.className = "my-no"; mn0.textContent = "";
+}
+var t = TIERS[idx];
+document.getElementById("tierNo").textContent = "Tier " + (idx + 1) + " of 10";
+document.getElementById("tierName").textContent = t.name;
+document.getElementById("rareTag").className = "rare" + (idx === 9? " on": "");
+document.getElementById("identity").textContent = t.identity;
+document.getElementById("comment").textContent = t.comment;
+document.getElementById("beat").textContent = "You beat ~" + t.beat + "% of players";
+result.classList.add("show");
+result.scrollIntoView({ behavior: "smooth", block: "nearest"});
+if (!isFriend) {
+setShareResult(idx);
+var myNoEl = document.getElementById("myNo");
+myNoEl.className = "my-no"; myNoEl.textContent = "";
+countCall("hit", function(v) {
+myNo = v;
+myNoEl.textContent = "🎉 You are person #" + fmtNo(v) + " reborn in China";
+myNoEl.className = "my-no on";
+document.getElementById("totalLine").textContent = "🔥 " + fmtNo(v) + " people have already been reborn in China";
+});
+}
+}
+
+spinBtn.addEventListener("click", spin);
+document.getElementById("againBtn").addEventListener("click", function() {
+window.scrollTo({ top: 0, behavior: "smooth"});
+setTimeout(spin, 350);
+});
+
+// 复制战绩链接
+var copyBtn = document.getElementById("copyBtn");
+copyBtn.addEventListener("click", function() {
+var url = location.href;
+function done() {
+copyBtn.textContent = "Copied ✓";
+setTimeout(function() { copyBtn.textContent = "🔗 Copy my result link";}, 2000);
+}
+if (navigator.clipboard && navigator.clipboard.writeText) {
+navigator.clipboard.writeText(url).then(done, function() { fallbackCopy(url, done);});
+} else fallbackCopy(url, done);
+});
+// 发到 X：一键生成带战绩的推文（X 的官方 intent 链接，点开即预填好文案和游戏链接）
+document.getElementById("xBtn").addEventListener("click", function() {
+if (lastIdx < 0) { showToast("Spin first — you need a result before you can flex it"); return; }
+var t = TIERS[lastIdx];
+var txt = "I just spun Reborn in China and landed \u3010" + t.name + "\u3011! " + t.identity + ". I beat ~" + t.beat + "% of players" + (myNo > 0 ? " — and I am person #" + myNo + " reborn in China" : "") + ". Think you can outrank me? Spin it 👇";
+var url = "https://cfldgaga.github.io/reborn-in-china/";
+window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(txt) + "&url=" + encodeURIComponent(url), "_blank");
+});
+
+function fallbackCopy(text, done) {
+var ta = document.createElement("textarea");
+ta.value = text;
+ta.style.position = "fixed"; ta.style.opacity = "0";
+document.body.appendChild(ta);
+ta.select();
+try { document.execCommand("copy"); done();}
+catch (e) { showToast("Copy failed — just copy the link from the address bar and share it");}
+document.body.removeChild(ta);
+}
+
+var toast = document.getElementById("toast"), toastTimer = null;
+function showToast(msg) {
+toast.textContent = msg;
+toast.classList.add("on");
+clearTimeout(toastTimer);
+toastTimer = setTimeout(function(){ toast.classList.remove("on");}, 2600);
+}
+document.querySelectorAll("[data-msg]").forEach(function(b) {
+b.addEventListener("click", function() { showToast(b.getAttribute("data-msg"));});
+});
+document.querySelectorAll("[data-link]").forEach(function(b) {
+b.addEventListener("click", function() { window.location.href = b.getAttribute("data-link");});
+});
+function wrapText(x, text, cx, y, maxW, lh) {
+var line = '', yy = y;
+for (var i = 0; i < text.length; i++) {
+var test = line + text[i];
+if (x.measureText(test).width > maxW && line) { x.fillText(line, cx, yy); line = text[i]; yy += lh;}
+else line = test;
+}
+if (line) x.fillText(line, cx, yy);
+return yy;
+}
+
+// 海报：画完先全屏亮出来长按保存，不再默认走文件下载
+var posterMask = document.getElementById("posterMask");
+var posterImg = document.getElementById("posterImg");
+var posterDataUrl = "", posterFileName = "";
+
+function finishPoster(c) {
+posterDataUrl = c.toDataURL("image/png");
+posterImg.src = posterDataUrl;
+posterMask.classList.add("on");
+}
+
+function drawPoster() {
+if (lastIdx < 0) { showToast("Spin first, then save your card"); return;}
+var t = TIERS[lastIdx];
+posterFileName = "Reborn-in-China-" + t.name.replace(/\s+/g, "-") + ".png";
+var c = document.createElement("canvas"); c.width = 750; c.height = 1200;
+var x = c.getContext("2d");
+var g = x.createLinearGradient(0, 0, 750, 1200);
+g.addColorStop(0, "#ff9a3d"); g.addColorStop(.55, "#ffd23f"); g.addColorStop(1, "#ff7b54");
+x.fillStyle = g; x.fillRect(0, 0, 750, 1200);
+x.fillStyle = "#fff8ea";
+if (x.roundRect) { x.beginPath(); x.roundRect(60, 80, 630, 960, 28); x.fill();} else x.fillRect(60, 80, 630, 960);
+x.textAlign = "center";
+x.fillStyle = "#c96a00"; x.font = "700 26px sans-serif";
+x.fillText("R E B O R N · I N · C H I N A", 375, 165);
+x.fillStyle = "#a05a00"; x.font = "24px sans-serif";
+x.fillText("T I E R " + (lastIdx + 1) + " · O F · 1 0", 375, 218);
+x.fillStyle = "#e65100"; x.font = "900 " + (t.name.length > 12? 62: t.name.length > 8? 84: 118) + "px sans-serif";
+x.fillText(t.name, 375, 362);
+var yy = 422;
+if (lastIdx === 9) {
+x.fillStyle = "#e63946";
+if (x.roundRect) { x.beginPath(); x.roundRect(255, 388, 240, 46, 23); x.fill();} else x.fillRect(255, 388, 240, 46);
+x.fillStyle = "#fff"; x.font = "700 24px sans-serif";
+x.fillText("U L T R A · R A R E", 375, 418);
+yy = 482;
+}
+x.fillStyle = "#7a3d00"; x.font = "700 25px sans-serif";
+x.fillText(t.identity, 375, yy); yy += 62;
+x.fillStyle = "#5b3400"; x.font = "29px sans-serif";
+yy = wrapText(x, t.comment, 375, yy, 520, 46); yy += 58;
+x.fillStyle = "#d35400"; x.font = "800 31px sans-serif";
+x.fillText("You beat ~" + t.beat + "% of players", 375, yy);
+if (myNo > 0) {
+yy += 54;
+x.fillStyle = "#e63946"; x.font = "800 30px sans-serif";
+x.fillText("Person #" + myNo + " reborn in China", 375, yy);
+}
+
+var qrY = yy + 44, qrSize = 168, qrX = 375 - qrSize / 2;
+function drawQrCaption() {
+x.fillStyle = "#7a3d00"; x.font = "700 25px sans-serif";
+x.fillText("Scan the code — your turn to spin a new life", 375, qrY + qrSize + 42);
+x.fillStyle = "#fff7e6"; x.font = "24px sans-serif";
+x.fillText("For fun only · 100% random", 375, 1092);
+x.font = "700 26px sans-serif";
+x.fillText("Reborn in China · by Dr. Wang", 375, 1130);
+finishPoster(c);
+}
+var qr = new Image();
+qr.onload = function() {
+x.fillStyle = "#ffffff";
+if (x.roundRect) { x.beginPath(); x.roundRect(qrX - 10, qrY - 10, qrSize + 20, qrSize + 20, 12); x.fill();}
+else x.fillRect(qrX - 10, qrY - 10, qrSize + 20, qrSize + 20);
+x.drawImage(qr, qrX, qrY, qrSize, qrSize);
+drawQrCaption();
+};
+qr.onerror = function() { drawQrCaption();};
+qr.src = "game-qr.png";
+}
+document.getElementById("dlBtn").addEventListener("click", drawPoster);
+
+document.getElementById("dlDirect").addEventListener("click", function() {
+if (!posterDataUrl) return;
+var a = document.createElement("a");
+a.download = posterFileName || "Reborn-in-China-card.png";
+a.href = posterDataUrl;
+a.click();
+});
+document.getElementById("posterClose").addEventListener("click", function() {
+posterMask.classList.remove("on");
+});
+posterMask.addEventListener("click", function(e) {
+if (e.target === posterMask) posterMask.classList.remove("on");
+});
+
+// 战绩接力：打开带?r=N / #r=N 的地址，直接亮出朋友的战绩
+(function initRelay() {
+var m = /[?&]r=(\d{1,2})/.exec(location.search || "") || /#r=(\d{1,2})/.exec(location.hash || "");
+if (!m) return;
+var idx = parseInt(m[1], 10);
+if (isNaN(idx) || idx < 0 || idx > 9) return;
+friendMode = true;
+var t = TIERS[idx];
+friendBanner.textContent = "Your friend just landed \u3010" + t.name + "\u3011. Think you can do better?";
+friendBanner.classList.add("on");
+resultTitle.textContent = "YOUR FRIEND'S RESULT";
+document.title = "My friend landed \u3010" + t.name + "\u3011 in Reborn in China — can you beat that?";
+spinBtn.textContent = "SPIN IT MYSELF";
+// 转盘无动画直接停在朋友那一档
+var center = idx * 36;
+currentRot = (360 - center) % 360;
+wheel.style.transition = "none";
+wheel.style.transform = "rotate(" + currentRot + "deg)";
+void wheel.offsetWidth;
+wheel.style.transition = "";
+showResult(idx, true);
+})();
+</script>
+</body>
+</html>
